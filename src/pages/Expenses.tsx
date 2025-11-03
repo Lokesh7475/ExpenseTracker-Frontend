@@ -52,7 +52,7 @@ const ExpensesPage: React.FC = () => {
   const totalPages = Math.ceil(DUMMY_EXPENSES.length / ITEMS_PER_PAGE);
 
   return (
-    <div className="p-6 space-y-8">
+    <div className="p-6 space-y-8 max-w-dvw w-max sm:w-auto sm:max-w-full">
       {loading
         ? Array.from({ length: ITEMS_PER_PAGE }).map((_, i) => (
             <Card key={i}>
@@ -68,9 +68,9 @@ const ExpensesPage: React.FC = () => {
             </Card>
           ))
         : currentItems.map((expense) => (
-            <Card key={expense.id}>
+            <Card key={expense.id} >
               <CardContent className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex flex-col flex-1 min-w-0 sm:max-w-2xs">
+                <div className="flex flex-col flex-1 sm:max-w-2xs">
                     <p className="break-words font-medium">{expense.description}</p>
                     <div className="flex items-center text-sm opacity-55">
                         {expense.paymentMethod}

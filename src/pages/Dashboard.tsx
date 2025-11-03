@@ -68,9 +68,9 @@ function Dashboard() {
 
 
     return (
-        <div className="p-6 space-y-8">
+        <div className="p-6 space-y-8 max-w-dvw w-max sm:w-auto sm:max-w-full">
         <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="justify-center grid gap-4 sm:grid-cols-2">
                 <Card>
                     <CardHeader>
                         <CardTitle>
