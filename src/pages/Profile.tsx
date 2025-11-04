@@ -7,10 +7,10 @@ import { Wallet, TrendingDown, Calendar, MapPin } from "lucide-react";
 export default function ProfilePage() {
   return (
     <div className="h-full w-full flex items-center justify-center bg-muted/30 p-4">
-      <Card className="w-full shadow-lg border">
+      <div className="w-full shadow-lg p-4">
 
-        <CardHeader className="flex items-center flex-col gap-4 text-center">
-          <Avatar className="h-24 w-24 shadow border">
+        <div className="flex items-center flex-col gap-4 text-center">
+          <Avatar className="h-24 w-24 shadow ">
             <AvatarImage src="https://github.com/shadcn.png" alt="profile" />
             <AvatarFallback>JD</AvatarFallback>
           </Avatar>
@@ -21,10 +21,10 @@ export default function ProfilePage() {
           <p className="text-sm text-muted-foreground">
             Managing finances smartly since 2022
           </p>
-        </CardHeader>
+        </div>
 
-        <CardContent className="mt-6 space-y-6">
-          <Separator className="-mt-6" />
+        <div className="mt-6 space-y-6">
+          <Separator className="" />
           <div className="grid grid-cols-2 gap-4 text-center">
             <div className="p-4 bg-muted/50 rounded-xl">
               <Wallet className="mx-auto mb-1" size={22} />
@@ -59,8 +59,8 @@ export default function ProfilePage() {
               </span>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 }
