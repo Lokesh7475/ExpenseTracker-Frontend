@@ -35,41 +35,51 @@ function Dashboard() {
     const pieChartConfig = {
         expense: {
             label: "Expense",
+            color: "#ffffff",           // white
         },
         groceries: {
             label: "Groceries",
-            color: "var(--chart-1)",
+            color: "#b0b0b0",           // light grey
         },
         leisure: {
             label: "Leisure",
-            color: "var(--chart-2)",
+            color: "#a0a0a0",           // medium grey
         },
         electronics: {
             label: "Electronics",
-            color: "var(--chart-3)",
+            color: "#909090",           // grey
         },
         utilities: {
             label: "Utilities",
-            color: "var(--chart-4)",
+            color: "#808080",           // dark grey
         },
         clothing: {
             label: "Clothing",
-            color: "var(--chart-5)",
+            color: "#707070",           // darker grey
         },
         health: {
             label: "Health",
-            color: "var(--chart-5)",
+            color: "#606060",           // even darker grey
         },
         others: {
             label: "Others",
-            color: "var(--chart-5)",
+            color: "#505050",           // near black grey
         },
-    } satisfies ChartConfig
+    } satisfies ChartConfig;
 
 
     return (
-        <div className="p-6 space-y-8 max-w-dvw w-max sm:w-auto sm:max-w-full">
-        <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
+        <div className="min-h-screen w-full bg-background px-4 py-8 md:px-8 lg:px-12">
+            <div className="max-w-6xl mx-auto space-y-10">
+            <header className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b pb-4">
+                <div className="text-center sm:text-left">
+                    <h1 className="text-3xl font-semibold tracking-tight">Dashboard</h1>
+                    <p className="text-sm text-muted-foreground mt-1">
+                        Overview of your recent expenses and spending patterns.
+                    </p>
+                </div>
+            </header>
+
             <div className="justify-center grid gap-4 sm:grid-cols-2">
                 <Card>
                     <CardHeader>
@@ -120,7 +130,7 @@ function Dashboard() {
                                 tickFormatter={(value) => value.slice(0, 3)}
                                 />
                                 <ChartTooltip content={<ChartTooltipContent />} />
-                                <Bar dataKey="expense" fill="var(--color-expense)" radius={4} />
+                                <Bar dataKey="expense" fill="#FFF" radius={4} />
                             </BarChart>
                         </ChartContainer>
                     </CardContent>
@@ -155,6 +165,7 @@ function Dashboard() {
                         </ChartContainer>
                     </CardContent>
                 </Card>
+            </div>
             </div>
         </div>
     )
