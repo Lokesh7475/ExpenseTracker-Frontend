@@ -3,63 +3,94 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Wallet, TrendingDown, Calendar, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ProfilePage() {
   return (
-    <div className="h-full w-full flex items-center justify-center bg-muted/30 p-4">
-      <div className="w-full shadow-lg p-4">
+    <div className="p-6 lg:p-12 h-full w-full bg-background transition-all duration-300">
+      <div className="max-w-4xl mx-auto space-y-8 pb-10">
+        {/* Profile Header */}
+        <Card className="shadow-sm border border-border/50">
+          <CardContent className="py-8 flex flex-col items-center text-center space-y-5 relative">
+            <Avatar className="h-24 w-24 shadow-md ring-2 ring-primary/20">
+              <AvatarImage src="https://github.com/shadcn.png" alt="Profile" />
+              <AvatarFallback>LK</AvatarFallback>
+            </Avatar>
 
-        <div className="flex items-center flex-col gap-4 text-center">
-          <Avatar className="h-24 w-24 shadow ">
-            <AvatarImage src="https://github.com/shadcn.png" alt="profile" />
-            <AvatarFallback>JD</AvatarFallback>
-          </Avatar>
-
-          <CardTitle className="text-2xl font-bold">Lokesh</CardTitle>
-          <Badge className="px-3 py-1 text-sm">Premium Member</Badge>
-
-          <p className="text-sm text-muted-foreground">
-            Managing finances smartly since 2022
-          </p>
-        </div>
-
-        <div className="mt-6 space-y-6">
-          <Separator className="" />
-          <div className="grid grid-cols-2 gap-4 text-center">
-            <div className="p-4 bg-muted/50 rounded-xl">
-              <Wallet className="mx-auto mb-1" size={22} />
-              <p className="text-lg font-bold">₹42,500</p>
-              <p className="text-xs text-muted-foreground">This Month Spent</p>
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight">Lokesh</h2>
+              <p className="text-sm text-muted-foreground">
+                Managing finances smartly since 2022
+              </p>
             </div>
 
-            <div className="p-4 bg-muted/50 rounded-xl">
-              <TrendingDown className="mx-auto mb-1" size={22} />
-              <p className="text-lg font-bold">₹1,20,000</p>
-              <p className="text-xs text-muted-foreground">Yearly Expense</p>
-            </div>
-          </div>
+            {/* Edit Profile Button */}
+            <Button
+              variant="outline"
+              className=" top-4 right-4 text-sm px-3 py-1.5 rounded-full"
+            >
+              Edit Profile
+            </Button>
+          </CardContent>
+        </Card>
 
-          <Separator />
+        {/* Spending Overview */}
+        <Card className="shadow-sm border border-border/50">
+          <CardHeader>
+            <CardTitle className="text-lg font-semibold tracking-tight">
+              Spending Overview
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="rounded-xl border border-border/40 p-5 text-center hover:bg-muted/50 transition">
+                <Wallet className="mx-auto mb-2 text-primary" size={22} />
+                <h3 className="text-xl font-semibold">₹42,500</h3>
+                <p className="text-xs text-muted-foreground mt-1">
+                  This Month’s Expense
+                </p>
+              </div>
 
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between text-muted-foreground">
-              <span>Email</span>
-              <span className="font-medium">lokesh@example.com</span>
+              <div className="rounded-xl border border-border/40 p-5 text-center hover:bg-muted/50 transition">
+                <TrendingDown className="mx-auto mb-2 text-primary" size={22} />
+                <h3 className="text-xl font-semibold">₹1,20,000</h3>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Yearly Expense
+                </p>
+              </div>
             </div>
-            <div className="flex justify-between text-muted-foreground">
-              <span>Location</span>
-              <span className="font-medium flex gap-1">
-                <MapPin size={14}/> India
-              </span>
+          </CardContent>
+        </Card>
+
+        {/* Account Details */}
+        <Card className="shadow-sm border border-border/50">
+          <CardHeader>
+            <CardTitle className="text-lg font-semibold tracking-tight">
+              Account Details
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Separator />
+            <div className="space-y-3 text-sm">
+              <div className="flex justify-between items-center">
+                <span className="text-muted-foreground">Email</span>
+                <span className="font-medium">lokesh@example.com</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-muted-foreground">Location</span>
+                <span className="font-medium flex items-center gap-1">
+                  <MapPin size={14} /> India
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-muted-foreground">Member Since</span>
+                <span className="font-medium flex items-center gap-1">
+                  <Calendar size={14} /> Jan 2022
+                </span>
+              </div>
             </div>
-            <div className="flex justify-between text-muted-foreground">
-              <span>Member Since</span>
-              <span className="font-medium flex gap-1">
-                <Calendar size={14}/> Jan 2022
-              </span>
-            </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
