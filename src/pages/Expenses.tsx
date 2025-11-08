@@ -53,6 +53,15 @@ const ExpensesPage: React.FC = () => {
 
   return (
     <div className="p-6 space-y-8 max-w-dvw w-max sm:w-auto sm:max-w-full">
+        <div className="max-w-6xl mx-auto space-y-10">
+            <header className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b pb-4">
+                <div className="text-center sm:text-left">
+                    <h1 className="text-3xl font-semibold tracking-tight">Expenses</h1>
+                    <p className="text-sm text-muted-foreground mt-1">
+                        View your previous expenses.
+                    </p>
+                </div>
+            </header>
       {loading
         ? Array.from({ length: ITEMS_PER_PAGE }).map((_, i) => (
             <Card key={i}>
@@ -125,6 +134,7 @@ const ExpensesPage: React.FC = () => {
           </PaginationItem>
         </PaginationContent>
       </Pagination>
+      </div>
     </div>
   );
 };

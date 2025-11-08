@@ -69,7 +69,7 @@ function Dashboard() {
 
 
     return (
-        <div className="min-h-screen w-full bg-background px-4 py-8 md:px-8 lg:px-12">
+        <div className="min-h-screen w-full bg-background px-4 py-8 md:px-8 lg:px-12" >
             <div className="max-w-6xl mx-auto space-y-10">
             <header className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b pb-4">
                 <div className="text-center sm:text-left">
