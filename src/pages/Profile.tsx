@@ -47,7 +47,7 @@ export default function ProfilePage() {
                 <Wallet className="mx-auto mb-2 text-primary" size={22} />
                 <h3 className="text-xl font-semibold">₹42,500</h3>
                 <p className="text-xs text-muted-foreground mt-1">
-                  This Month’s Expense
+                  This Month's Expense
                 </p>
               </div>
 
